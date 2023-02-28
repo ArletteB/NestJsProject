@@ -6,8 +6,8 @@ import {
   Entity,
   ManyToOne,
   PrimaryColumn,
-  Timestamp,
 } from 'typeorm';
+import { Timestamp } from '../../Generic/timestamp.entity';
 
 @Entity('comment')
 export class CommentEntity extends Timestamp {

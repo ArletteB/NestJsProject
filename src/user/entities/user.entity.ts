@@ -1,14 +1,8 @@
 import { CommentEntity } from 'src/comment/entities/comment.entity';
 import { PostEntity } from 'src/post/entity/post.entity';
-import {
-  Column,
-  Entity,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  Timestamp,
-} from 'typeorm';
-
-@Entity()
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Timestamp } from '../../Generic/timestamp.entity';
+@Entity('user')
 export class UserEntity extends Timestamp {
   @PrimaryGeneratedColumn()
   id: number;
