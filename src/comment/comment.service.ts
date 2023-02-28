@@ -22,15 +22,9 @@ export class CommentService {
 
   async findAll(queries) {
     let { order } = queries;
-    order = order ? order.createdAt : 'DESC';
-
-    try {
-      return await this.commentRepository.find({
-        order: { createdAt: order },
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    const query = await this.commentRepository
+      .createQueryBuilder('comment')
+      .orderBy('comment.createdAt', order || 'DESC');
   }
 
   async findOne(id: number) {
